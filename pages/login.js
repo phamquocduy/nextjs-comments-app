@@ -1,5 +1,7 @@
+import { SignInForm } from "../modules/auth";
+
 const Login = () => {
-  return <div>Login</div>;
+  return <SignInForm />;
 };
 
 export default Login;

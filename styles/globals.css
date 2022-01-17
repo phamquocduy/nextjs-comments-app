@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  width: 100%;
-  height: 100%;
+@layer base {
+  html,
+  body {
+    @apply w-full h-full;
+  }
 }

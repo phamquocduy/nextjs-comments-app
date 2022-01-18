@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 
 const navigation = [
   { name: "Recent articles", href: "#" },
@@ -6,6 +7,8 @@ const navigation = [
 ];
 
 const Header = () => {
+  const { data: session } = useSession();
+
   return (
     <header className="bg-indigo-600">
       <nav className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
@@ -19,11 +22,20 @@ const Header = () => {
           </div>
 
           <div className="ml-10 space-x-4">
-            <Link href="/login">
-              <a className="inline-block px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md hover:bg-opacity-75">
-                Sign in
-              </a>
-            </Link>
+            {session ? (
+              <button
+                className="inline-block px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md hover:bg-opacity-75"
+                onClick={() => signOut({ redirect: false })}
+              >
+                Sign out
+              </button>
+            ) : (
+              <Link href="/login">
+                <a className="inline-block px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md hover:bg-opacity-75">
+                  Sign in
+                </a>
+              </Link>
+            )}
           </div>
         </div>
       </nav>

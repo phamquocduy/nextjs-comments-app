@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { MainLayout } from "../components/layout";
 import { AuthProvider } from "../modules/auth";
+import { ArticleList } from "../modules/articles";
 
 const Home = () => {
   return (
@@ -12,7 +13,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <AuthProvider>Signed in</AuthProvider>
+      <AuthProvider>
+        <ArticleList />
+      </AuthProvider>
     </div>
   );
 };

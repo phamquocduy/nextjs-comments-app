@@ -2,7 +2,8 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
 const navigation = [
-  { name: "Recent articles", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Recent articles", href: "/article/list" },
   { name: "About", href: "#" },
 ];
 
@@ -15,9 +16,9 @@ const Header = () => {
         <div className="flex items-center justify-between w-full py-6 border-b border-indigo-500 lg:border-none">
           <div className="block space-x-8">
             {navigation.map((link) => (
-              <a key={link.name} href={link.href} className="text-base font-medium text-white hover:text-indigo-50">
-                {link.name}
-              </a>
+              <Link key={link.name} href={link.href}>
+                <a className="text-base font-medium text-white hover:text-indigo-50">{link.name}</a>
+              </Link>
             ))}
           </div>
 

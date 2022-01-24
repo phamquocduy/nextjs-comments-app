@@ -10,7 +10,7 @@ export default NextAuth({
           password: credentials.password,
         };
 
-        const res = await fetch("https://fullstack.exercise.applifting.cz/login", {
+        const res = await fetch(`${process.env.API_URL}/login`, {
           method: "POST",
           body: JSON.stringify(payload),
           headers: {
@@ -22,7 +22,12 @@ export default NextAuth({
         const user = await res.json();
 
         if (user) {
-          return user;
+          return {
+            ...user,
+            // pass username + apiKey down to callbacks
+            username: credentials.username,
+            apiKey: credentials.apiKey,
+          };
         }
 
         // Return null if user data could not be retrieved
@@ -38,6 +43,7 @@ export default NextAuth({
       if (user) {
         if (user.access_token) {
           token = {
+            ...user,
             accessToken: user.access_token,
             maxAge: user.expires_in,
           };
@@ -49,9 +55,8 @@ export default NextAuth({
     async session({ session, user, token }) {
       session.accessToken = token.accessToken;
       //add user details info
-      session.user = {
-        name: "ABC",
-      };
+      session.user = { username: token.username };
+      session.apiKey = token.apiKey;
 
       return session;
     },

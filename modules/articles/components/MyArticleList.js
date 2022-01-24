@@ -40,9 +40,6 @@ export const MyArticleList = ({ listData }) => {
                   >
                     Create At
                   </th>
-                  <th scope="col" className="relative px-6 py-3">
-                    <span className="sr-only">Edit</span>
-                  </th>
                 </tr>
               </thead>
 

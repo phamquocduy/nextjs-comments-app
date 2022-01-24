@@ -25,15 +25,12 @@ const SignedUserToolbar = ({ user }) => {
       </div>
 
       <Link href="/article/my-list">
-        <a className="text-base font-medium text-white hover:text-indigo-50">My articles</a>
+        <a className="text-base font-medium text-gray-900 hover:text-indigo-50">My articles</a>
       </Link>
 
-      <button
-        className="inline-block px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md hover:bg-opacity-75"
-        onClick={() => {}}
-      >
-        Create new article
-      </button>
+      <Link href="/article/create-new">
+        <a className="text-base font-medium text-gray-900 hover:text-indigo-50">Create new article</a>
+      </Link>
 
       <button
         className="inline-block px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md hover:bg-opacity-75"

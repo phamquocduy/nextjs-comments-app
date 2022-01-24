@@ -45,7 +45,6 @@ export const CommentCreateNew = () => {
                       type="button"
                       className="-m-2.5 w-10 h-10 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500"
                     >
-                      <span className="sr-only">Insert link</span>
                       <LinkIcon className="w-5 h-5" aria-hidden="true" />
                     </button>
                   </div>
@@ -54,7 +53,6 @@ export const CommentCreateNew = () => {
                       type="button"
                       className="-m-2.5 w-10 h-10 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500"
                     >
-                      <span className="sr-only">Insert code</span>
                       <CodeIcon className="w-5 h-5" aria-hidden="true" />
                     </button>
                   </div>
@@ -63,7 +61,6 @@ export const CommentCreateNew = () => {
                       type="button"
                       className="-m-2.5 w-10 h-10 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500"
                     >
-                      <span className="sr-only">Mention someone</span>
                       <AtSymbolIcon className="w-5 h-5" aria-hidden="true" />
                     </button>
                   </div>
@@ -72,9 +69,6 @@ export const CommentCreateNew = () => {
             </Tab.List>
             <Tab.Panels className="mt-2">
               <Tab.Panel className="p-0.5 -m-0.5 rounded-lg">
-                <label htmlFor="comment" className="sr-only">
-                  Comment
-                </label>
                 <div>
                   <textarea
                     rows={5}

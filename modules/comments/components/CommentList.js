@@ -47,14 +47,12 @@ const CommentList = () => {
                   type="button"
                   className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <span className="sr-only">Previous</span>
                   <ThumbUpIcon className="w-3 h-3" aria-hidden="true" />
                 </button>
                 <button
                   type="button"
                   className="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <span className="sr-only">Next</span>
                   <ThumbDownIcon className="w-3 h-3" aria-hidden="true" />
                 </button>
               </span>
@@ -93,14 +91,12 @@ const CommentList = () => {
                   type="button"
                   className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <span className="sr-only">Previous</span>
                   <ThumbUpIcon className="w-3 h-3" aria-hidden="true" />
                 </button>
                 <button
                   type="button"
                   className="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <span className="sr-only">Next</span>
                   <ThumbDownIcon className="w-3 h-3" aria-hidden="true" />
                 </button>
               </span>
@@ -122,14 +118,12 @@ const CommentList = () => {
                             type="button"
                             className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                           >
-                            <span className="sr-only">Previous</span>
                             <ThumbUpIcon className="w-3 h-3" aria-hidden="true" />
                           </button>
                           <button
                             type="button"
                             className="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                           >
-                            <span className="sr-only">Next</span>
                             <ThumbDownIcon className="w-3 h-3" aria-hidden="true" />
                           </button>
                         </span>

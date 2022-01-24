@@ -2,6 +2,7 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "Recent articles", href: "/article/list" },
   { name: "About", href: "#" },
 ];

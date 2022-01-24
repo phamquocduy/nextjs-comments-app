@@ -2,29 +2,30 @@ import { getSession } from "next-auth/react";
 
 import { MainLayout } from "../../components/layout";
 import { AuthProvider } from "../../modules/auth";
-import { ArticleList } from "../../modules/articles";
+import { ArticleDetail } from "../../modules/articles";
 
-const List = ({ data }) => {
+const Detail = ({ data }) => {
   return (
     <AuthProvider>
-      <ArticleList listData={data.items} />
+      <ArticleDetail articleData={data} />
     </AuthProvider>
   );
 };
 
-List.getLayout = (page) => {
+Detail.getLayout = (page) => {
   return <MainLayout>{page}</MainLayout>;
 };
 
 export async function getServerSideProps(context) {
   let data = [];
   let session = await getSession(context);
+  let { params } = context;
 
   if (!session) {
     return { props: { data } };
   }
 
-  const res = await fetch(`${process.env.API_URL}/articles`, {
+  const res = await fetch(`${process.env.API_URL}/articles/${params.id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -38,4 +39,4 @@ export async function getServerSideProps(context) {
   return { props: { data } };
 }
 
-export default List;
+export default Detail;

@@ -4,6 +4,7 @@ const FAKE_DATA = {
   category: { name: "Case Study", href: "#" },
   imageUrl:
     "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
+  createAt: "20. 01. 2022 15:34",
   readingTime: "5 min",
   author: {
     name: "Daniela Metz",
@@ -67,7 +68,7 @@ export const ArticleList = ({ listData }) => {
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-500">
-                      <time>{item.createdAt}</time>
+                      <time>{FAKE_DATA.createAt}</time>
                       <span aria-hidden="true">&middot;</span>
                       <span>{FAKE_DATA.readingTime} read</span>
                     </div>

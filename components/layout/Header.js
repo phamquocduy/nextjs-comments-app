@@ -5,22 +5,12 @@ import { PlusSmIcon } from "@heroicons/react/solid";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { signOut, useSession } from "next-auth/react";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-const FAKE_DATA = {
-  author: {
-    name: "Daniela Metz",
-    email: "abc.xyz@example.com",
-    imageUrl:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-};
+import { getFakeUser, classNames } from "../../utils";
 
 const Header = () => {
   const { data: session } = useSession();
   const [tab, selectTab] = useState("Home");
+  const fakeUser = getFakeUser();
 
   const handleSelectTab = (e, name) => {
     selectTab(name);
@@ -121,7 +111,7 @@ const Header = () => {
                     <Menu as="div" className="relative ml-3">
                       <div>
                         <Menu.Button className="flex text-sm bg-white rounded-full outline-none ring-2 ring-offset-2 ring-indigo-500">
-                          <img className="w-8 h-8 rounded-full" src={FAKE_DATA.author.imageUrl} alt="" />
+                          <img className="w-8 h-8 rounded-full" src={fakeUser.imageUrl} alt="" />
                         </Menu.Button>
                       </div>
                       <Transition
@@ -193,7 +183,7 @@ const Header = () => {
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <div className="flex items-center px-4 sm:px-6">
                   <div className="flex-shrink-0">
-                    <img className="w-10 h-10 rounded-full" src={FAKE_DATA.author.imageUrl} alt="" />
+                    <img className="w-10 h-10 rounded-full" src={fakeUser.imageUrl} alt="" />
                   </div>
                   <div className="ml-3">
                     <div className="text-base font-medium text-gray-800">{session.user.username}</div>

@@ -1,20 +1,11 @@
 import Link from "next/link";
 
-const FAKE_DATA = {
-  category: { name: "Case Study", href: "#" },
-  imageUrl:
-    "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-  createAt: "20. 01. 2022 15:34",
-  readingTime: "5 min",
-  author: {
-    name: "Daniela Metz",
-    href: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-};
+import { getFakeUser, getFakeArticle } from "../../../utils";
 
 export const ArticleList = ({ listData }) => {
+  const fakeUser = getFakeUser();
+  const fakeArticle = getFakeArticle();
+
   return (
     <div className="relative px-4 py-16 sm:px-6 lg:px-8">
       <div className="absolute inset-0">
@@ -33,15 +24,15 @@ export const ArticleList = ({ listData }) => {
             <div key={item.articleId} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
               {/* fake image */}
               <div className="flex-shrink-0">
-                <img className="object-cover w-full h-48" src={FAKE_DATA.imageUrl} alt="" />
+                <img className="object-cover w-full h-48" src={fakeArticle.imageUrl} alt="" />
               </div>
 
               <div className="flex flex-col justify-between flex-1 p-6 bg-white">
                 <div className="flex-1">
                   <p className="text-sm font-medium text-indigo-600">
                     {/* fake category */}
-                    <Link href={FAKE_DATA.category.href}>
-                      <a className="hover:underline">{FAKE_DATA.category.name}</a>
+                    <Link href={fakeArticle.category.href}>
+                      <a className="hover:underline">{fakeArticle.category.name}</a>
                     </Link>
                   </p>
                   <Link href={`/article/${item.articleId}`}>
@@ -55,22 +46,22 @@ export const ArticleList = ({ listData }) => {
                 {/* fake author */}
                 <div className="flex items-center mt-6">
                   <div className="flex-shrink-0">
-                    <Link href={FAKE_DATA.author.href}>
+                    <Link href={fakeUser.href}>
                       <a>
-                        <img className="w-10 h-10 rounded-full" src={FAKE_DATA.author.imageUrl} alt="Author" />
+                        <img className="w-10 h-10 rounded-full" src={fakeUser.imageUrl} alt="Author" />
                       </a>
                     </Link>
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-900">
-                      <Link href={FAKE_DATA.author.href}>
-                        <a className="hover:underline">{FAKE_DATA.author.name}</a>
+                      <Link href={fakeUser.href}>
+                        <a className="hover:underline">{fakeUser.name}</a>
                       </Link>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-500">
-                      <time>{FAKE_DATA.createAt}</time>
+                      <time>{fakeArticle.createAt}</time>
                       <span aria-hidden="true">&middot;</span>
-                      <span>{FAKE_DATA.readingTime} read</span>
+                      <span>{fakeArticle.readingTime} read</span>
                     </div>
                   </div>
                 </div>

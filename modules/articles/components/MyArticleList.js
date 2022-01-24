@@ -1,13 +1,8 @@
-const FAKE_DATA = {
-  author: {
-    name: "Daniela Metz",
-    email: "abc.xyz@example.com",
-    imageUrl:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-};
+import { getFakeUser } from "../../../utils";
 
 export const MyArticleList = ({ listData }) => {
+  const fakeUser = getFakeUser();
+
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -40,6 +35,12 @@ export const MyArticleList = ({ listData }) => {
                   >
                     Create At
                   </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+                  >
+                    Action
+                  </th>
                 </tr>
               </thead>
 
@@ -50,11 +51,11 @@ export const MyArticleList = ({ listData }) => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 w-10 h-10">
-                          <img className="w-10 h-10 rounded-full" src={FAKE_DATA.author.imageUrl} alt="" />
+                          <img className="w-10 h-10 rounded-full" src={fakeUser.imageUrl} alt="" />
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">{FAKE_DATA.author.name}</div>
-                          <div className="text-sm text-gray-500">{FAKE_DATA.author.email}</div>
+                          <div className="text-sm font-medium text-gray-900">{fakeUser.name}</div>
+                          <div className="text-sm text-gray-500">{fakeUser.email}</div>
                         </div>
                       </div>
                     </td>

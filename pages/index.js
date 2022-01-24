@@ -24,12 +24,11 @@ const todos = [
   },
   {
     name: "API",
-    description: "Check out the API here https://github.com/Applifting/fullstack-exercise/blob/master/api.yml",
+    description: `Check out the API <a class="text-indigo-600" href="https://github.com/Applifting/fullstack-exercise/blob/master/api.yml" target="_blank" rel="noopener noreferrer">here</a>`,
   },
   {
     name: "Wireframes",
-    description:
-      "Implement the wireframes here https://www.figma.com/file/VagZOrr3TjTAxGCpCUTSrO/Applifting-%7C-Full-Stack-Cvi%C4%8Den%C3%AD?node-id=2%3A2",
+    description: `Implement the wireframes <a class="text-indigo-600" href="https://www.figma.com/file/VagZOrr3TjTAxGCpCUTSrO/Applifting-%7C-Full-Stack-Cvi%C4%8Den%C3%AD?node-id=2%3A2" target="_blank" rel="noopener noreferrer">here</a>`,
   },
 ];
 
@@ -42,21 +41,23 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="px-4 py-16 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+      <div className="px-4 py-4 mx-auto max-w-7xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-900">Blogging engine</h2>
           <p className="mt-4 text-lg text-gray-500">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
           </p>
         </div>
-        <dl className="grid grid-cols-1 mt-12 space-y-10 sm:space-y-0 sm:gap-x-6 sm:gap-y-12 lg:gap-x-8">
+        <dl className="grid grid-cols-1 mt-8 space-y-6 gap-x-6">
           {todos.map((feature) => (
             <div key={feature.name} className="relative">
               <dt>
                 <CheckIcon className="absolute w-6 h-6 text-green-500" aria-hidden="true" />
                 <p className="text-lg font-medium leading-6 text-gray-900 ml-9">{feature.name}</p>
               </dt>
-              <dd className="mt-2 text-base text-gray-500 ml-9">{feature.description}</dd>
+              <dd className="mt-2 text-base text-gray-500 ml-9">
+                <div dangerouslySetInnerHTML={{ __html: feature.description }} />
+              </dd>
             </div>
           ))}
         </dl>

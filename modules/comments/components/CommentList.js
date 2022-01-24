@@ -1,29 +1,12 @@
 import { ThumbUpIcon, ThumbDownIcon } from "@heroicons/react/solid";
 
 import { CommentCreateNew } from "./CommentCreateNew";
-
-const FAKE_DATA = {
-  author: {
-    name: "Daniela Metz",
-    href: "#",
-    imageUrl:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  comments: [
-    {
-      id: 1,
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut  labore et dolore magna aliquyam erat, sed diam voluptua.",
-    },
-    {
-      id: 2,
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut  labore et dolore magna aliquyam erat, sed diam voluptua.",
-    },
-  ],
-};
+import { getFakeUser, getFakeComments } from "../../../utils";
 
 const CommentList = () => {
+  const fakeUser = getFakeUser();
+  const fakeComments = getFakeComments();
+
   return (
     <div className="px-8 mt-12 antialiased sm:px-24 lg:px-40">
       <h3 className="mb-4 text-lg font-semibold text-gray-900">Comments</h3>
@@ -33,10 +16,10 @@ const CommentList = () => {
       <div className="space-y-4">
         <div className="flex">
           <div className="flex-shrink-0 mr-3">
-            <img className="w-8 h-8 mt-2 rounded-full sm:w-10 sm:h-10" src={FAKE_DATA.author.imageUrl} alt="" />
+            <img className="w-8 h-8 mt-2 rounded-full sm:w-10 sm:h-10" src={fakeUser.imageUrl} alt="" />
           </div>
           <div className="flex-1 px-4 py-2 leading-relaxed border rounded-lg sm:px-6 sm:py-4">
-            <strong>{FAKE_DATA.author.name}</strong> <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
+            <strong>{fakeUser.name}</strong> <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
             <p className="text-sm">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
               et dolore magna aliquyam erat, sed diam voluptua.
@@ -77,10 +60,10 @@ const CommentList = () => {
 
         <div className="flex">
           <div className="flex-shrink-0 mr-3">
-            <img className="w-8 h-8 mt-2 rounded-full sm:w-10 sm:h-10" src={FAKE_DATA.author.imageUrl} alt="" />
+            <img className="w-8 h-8 mt-2 rounded-full sm:w-10 sm:h-10" src={fakeUser.imageUrl} alt="" />
           </div>
           <div className="flex-1 px-4 py-2 leading-relaxed border rounded-lg sm:px-6 sm:py-4">
-            <strong>{FAKE_DATA.author.name}</strong> <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
+            <strong>{fakeUser.name}</strong> <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
             <p className="text-sm">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
               et dolore magna aliquyam erat, sed diam voluptua.
@@ -102,15 +85,14 @@ const CommentList = () => {
               </span>
             </div>
             <div className="mt-4 space-y-4">
-              {FAKE_DATA.comments.map((item) => {
+              {fakeComments.map((item) => {
                 return (
                   <div className="flex" key={item.id}>
                     <div className="flex-shrink-0 ml-3">
-                      <img className="w-6 h-6 mt-3 rounded-full sm:w-8 sm:h-8" src={FAKE_DATA.author.imageUrl} alt="" />
+                      <img className="w-6 h-6 mt-3 rounded-full sm:w-8 sm:h-8" src={fakeUser.imageUrl} alt="" />
                     </div>
                     <div className="flex-1 px-4 py-2 ml-4 leading-relaxed bg-gray-100 rounded-lg sm:px-6 sm:py-4">
-                      <strong>{FAKE_DATA.author.name}</strong>{" "}
-                      <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
+                      <strong>{fakeUser.name}</strong> <span className="text-xs text-gray-400">20. 01. 2022 15:34</span>
                       <p className="text-xs sm:text-sm">{item.content}</p>
                       <div className="flex items-center mt-4">
                         <span className="relative z-0 inline-flex rounded-md shadow-sm">

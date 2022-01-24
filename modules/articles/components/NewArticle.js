@@ -1,9 +1,7 @@
 import { Tab } from "@headlessui/react";
 import { AtSymbolIcon, CodeIcon, LinkIcon } from "@heroicons/react/solid";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "../../../utils";
 
 export const NewArticle = () => {
   return (

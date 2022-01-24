@@ -1,5 +1,7 @@
 import Markdown from "react-markdown";
 
+import CommentList from "../../comments/components/CommentList";
+
 export const ArticleDetail = ({ articleData }) => {
   return (
     <div className="relative py-16 overflow-hidden bg-white">
@@ -20,6 +22,8 @@ export const ArticleDetail = ({ articleData }) => {
           <Markdown>{articleData.content}</Markdown>
         </div>
       </div>
+
+      <CommentList />
     </div>
   );
 };

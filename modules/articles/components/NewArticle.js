@@ -3,6 +3,12 @@ import { AtSymbolIcon, CodeIcon, LinkIcon } from "@heroicons/react/solid";
 
 import { classNames } from "../../../utils";
 
+/**
+ * TODO
+ * - create POST request to create new article
+ * - we use API Route in NextJs for the request https://nextjs.org/docs/api-routes/introduction
+ * - for the form I would use Formik for getting values in and out of form + yup for validations
+ */
 export const NewArticle = () => {
   return (
     <div className="space-y-8 divide-y divide-gray-200">

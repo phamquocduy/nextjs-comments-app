@@ -3,6 +3,12 @@ import { ThumbUpIcon, ThumbDownIcon } from "@heroicons/react/solid";
 import { CommentCreateNew } from "./CommentCreateNew";
 import { getFakeUser, getFakeComments } from "../../../utils";
 
+/**
+ * TODO
+ * - create POST request for voting functionality
+ * - display score on each comment
+ * - show comment's replies
+ */
 const CommentList = () => {
   const fakeUser = getFakeUser();
   const fakeComments = getFakeComments();

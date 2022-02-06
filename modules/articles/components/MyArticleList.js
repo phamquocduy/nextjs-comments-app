@@ -1,5 +1,11 @@
 import { getFakeUser } from "../../../utils";
 
+/**
+ * TODO
+ * - add button for create new article
+ * - implement edit and delete buttons
+ * - for the grid I would use AG Grid for handling the table data + article ordering
+ */
 export const MyArticleList = ({ listData }) => {
   const fakeUser = getFakeUser();
 

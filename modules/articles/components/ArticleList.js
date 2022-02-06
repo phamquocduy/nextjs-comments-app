@@ -2,6 +2,10 @@ import Link from "next/link";
 
 import { getFakeUser, getFakeArticle } from "../../../utils";
 
+/**
+ * TODO
+ * - list should be ordered by date descending
+ */
 export const ArticleList = ({ listData }) => {
   const fakeUser = getFakeUser();
   const fakeArticle = getFakeArticle();
